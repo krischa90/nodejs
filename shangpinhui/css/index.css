@@ -1,0 +1,226 @@
+/* #region Global Settings */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.leftfix {
+    float: left;
+}
+
+.rightfix {
+    float: right;
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*#endregion */
+
+/* #region topbar */
+.topbar {
+    height: 30px;
+    background-color: #ececec;
+}
+
+.welcome {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0px;
+    color: #666;
+}
+
+.welcome span, .welcome a {
+    font-size: 12px;
+}
+
+.welcome .hello {
+    margin-right: 28px; 
+}
+
+.welcome .login {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+
+.welcome .register {
+    padding-left: 10px;
+    border-left: 1px solid #666;
+}
+
+.topbar-nav .list li {
+    float: left;
+}
+
+.topbar-nav .list li a {
+    padding: 0px 15px;
+    border-right: 1px solid #666;
+    font-size: 12px;
+}
+
+.topbar-nav .list {
+    height: 30px;
+    line-height: 30px;
+}
+
+.topbar-nav .list li:first-child a {
+    padding-left: 0px;
+}
+
+.topbar-nav .list li:last-child a {
+    padding-right: 0px;
+    border: 0px;
+}
+ /* #endregion topbar end */
+
+ /* #region header*/
+.header {
+    height: 120px;
+    padding: 20px;
+    /* background-color: skyblue; */
+}
+
+.header .search form {
+    margin-top: 42px;
+    font-size: 0px;
+}
+
+.header .logo img {
+    width: 120px;
+    padding-top: 15px;
+}
+
+.header .search input {
+    width: 508px; /* Adjust as needed */
+    height: 34px;
+    border: 1px solid #DD302D;
+}
+
+.header .search button {
+    padding-top: 33px;
+    width: 80px;
+    height: 36px;
+    background-color: #DD302D;
+    vertical-align: top;
+    background-image: url("../images/search-icon.png");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: 28px 6px;
+}
+/* #endregion*/
+
+/* #region main-nav*/
+.main-nav {
+    height: 48px;
+    border-bottom: 1px solid #DD302D;
+}
+
+.main-nav .all-types {
+    width: 190px;
+    height: 48px;
+    line-height: 48px;
+    background-color: #DD302D;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+.main-nav-list {
+    height: 48px;
+    line-height: 48px;
+}
+
+.main-nav-list li {
+    float: left;
+    margin: 0px 10px;
+}
+/*#endregion*/
+
+/*#region main-content*/
+.main-content {
+    margin-top: 10px;
+}
+
+.main-content .slide-nav {
+    width: 190px;
+    height: 458px;
+    background-color: #F4F4F4;
+    position: relative;
+}
+
+.main-content .slide-nav li {
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    margin-left: 16px;
+}
+
+.main-content .slide-nav li:hover {
+    background-color: red
+}
+
+.main-content .slide-nav li:hover>a {
+    color: white;
+}
+
+.main-content .slide-nav li:hover .second-menu {
+    display: block;
+}
+
+.second-menu {
+    width: 680px;
+    height: 458px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 190px;
+    padding-left: 20px;
+    display: none;
+}
+
+.second-menu dl {
+    height: 36px;
+    line-height: 36px;
+}
+
+.second-menu dl:first-child {
+    margin-top: 10px;
+}
+
+.second-menu dt {
+    width: 70px;
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+}
+
+.second-menu dd {
+    float: left;
+}
+
+.second-menu dd a {
+    padding: 0 10px;
+    border-left: 1px solid #666;
+}
+
+.main-content .banner {
+    width: 690px;
+    height: 458px;
+    background-color: green;
+    margin: 0 10px;
+}
+
+.main-content .banner img {
+    width: 690px;
+    height: 458px;
+}
+
+.main-content .slide-other {
+    width: 290px;
+    height: 458px;
+    background-color: orange;
+}
+/*#endregion*/
