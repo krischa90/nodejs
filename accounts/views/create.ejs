@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>添加记录</title>
+    <style>
+        .container {
+          display: flex;
+          flex-direction: column; /* Stack the h1 and form vertically */
+          align-items: center; /* Center the form and h1 horizontally */
+          height: 100vh; /* Full viewport height to center vertically */
+        }
+
+        h1 {
+          text-align: center;
+          width: 100%;
+        }
+
+        label {
+          font-weight: bolder;
+        }
+
+        .form input, .form select, .form textarea  {
+          width: 100%;
+          max-width: 500px;
+          box-sizing: border-box; /* Ensures padding and border are included in width calculation */
+          padding: 5px; /* Add padding for consistency */
+        }
+
+        input[type="submit"] {
+          font-weight: bold;
+        }
+
+        .submit {
+          background-color: lightblue;
+          text-align: center;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>添加记录</h1>
+      <div class="form">
+        <form action="/account" method="post">
+          <label for="item">事项</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+  
+          <label for="date">邮件</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+  
+          <label for="type">类型</label><br>
+          <select id="type" name="type">
+            <option value="支出">支出</option>
+            <option value="收入">收入</option>
+          </select><br><br>
+          
+          <label for="amount">金额</label><br>
+          <input type="amount" id="amount" name="amount" required><br><br>
+
+          <label for="memo">备注</label><br>
+          <textarea id="memo" name="memo" rows="4" cols="50"></textarea><br><br>
+
+          <input class="submit" type="submit" value="添加">
+      </form>
+      </div>
+    </div>
+  </body>
+</html>

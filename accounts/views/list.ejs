@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 3 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* Ensure the body takes up the full viewport height */
+            margin: 0;
+            /* Remove default margin */
+            display: flex;
+            justify-content: center;
+            /* Horizontally center the container */
+        }
+
+        .container {
+            width: 1000px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+
+        .header {
+            height: 30px;
+            line-height: 30px;
+            font-size: medium;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
+        .header-sign {
+            background-color: pink;
+        }
+
+        .header-danger {
+            background-color: lightblue;
+        }
+
+        .form-column {
+            display: flex;
+            /* Enable Flexbox layout */
+            margin: 10px 0 10px 0;
+            padding: 10px 0 10px 0;
+            border: 1px solid blueviolet;
+        }
+
+        .column1,
+        .column2,
+        .column3 {
+            flex: 1;
+            /* Distribute available space equally among the columns */
+            text-align: left;
+            /* Center text in each column */
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .column4 {
+            margin-left: 10px;
+            /* Add some space between the last column and glyphicon */
+        }
+
+        .label {
+            color: black;
+            /* Ensure the text is visible */
+            font-size: medium;
+            /* Adjust the font size */
+        }
+
+        .label-warning {
+            background-color: yellow;
+        }
+
+        .label-success {
+            background-color: red;
+        }
+
+        /* Row containing both returnHome and logout */
+        .bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-top: auto;
+            /* Pushes the row to the bottom */
+        }
+
+        /* Style for the returnHome link */
+        .returnHome a {
+            text-decoration: none;
+            color: #007bff;
+            /* Customize color */
+        }
+
+        /* Style for the logout button */
+        .logout {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>记账本</h1>
+            <div class="accounts">
+                <% data.forEach(item=> { %>
+                    <div class="header <%= item.type === '支出' ? 'header-danger' : 'header-sign' %>">
+                        <%= item.memo %>>
+                    </div>
+                    <!-- Column 1: Name -->
+                    <div class="form-column">
+                        <div class="column1">
+                            <%= item.email %>
+                        </div>
+                        <div class="column2">
+                            <span class="label <%= item.type === '支出' ? 'label-warning' : 'label-success' %>">
+                                <%= item.type%>
+                            </span>
+                        </div>
+                        <div class="column3">
+                            <%= item.amount %>
+                        </div>
+                        <div class="column4">
+                            <a class='deleteBtn' href="/account/<%= item._id %>">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="returnHome"><a href="./create">Return to Home</a></div>
+            <button class="logout"><a href="/logout">退出</a></button>
+        </div>
+    </div>
+</body>
+<script>
+    let deleteBtns = document.querySelectorAll('.deleteBtn');
+    deleteBtns.forEach(item => {
+        item.addEventListener('click', function (e) {
+            if (confirm('Are you sure?')) {
+                return true;
+            } else {
+                e.preventDefault();
+            }
+        })
+    });
+</script>
+
+</html>
